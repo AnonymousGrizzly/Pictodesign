@@ -1,0 +1,79 @@
+.cards{
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cards > h1 {
+    color: rgb(0,0,0);
+    font-size: 30px;
+    margin-bottom: 2vh;
+}
+
+.cards > p {
+    color: rgb(0,0,0);
+    font-size: 20px;
+    margin-bottom: 2vh;
+}
+
+.Gorazd-Rogelj{
+    background: linear-gradient(rgb(255,255,255) 0%, rgb(190, 190, 190) 100%);
+    color: #000;
+    height:fit-content;
+}
+
+.Gorazd-Rogelj > p, .AboutUs > p {
+    display: flex;
+    font-size: 22px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25vh;
+    margin-right: 5vh;
+    padding-bottom: 30vh;
+}
+
+.Gorazd-Rogelj > h1, .AboutUs > h1{
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+    margin-left: 25vh;
+    font-size: 50px;
+}
+.grey-line{
+    background-color: rgb(190, 190, 190);
+}
+
+.white-line{
+    background-color: white;
+}
+
+.line {
+    background-color: #eb0606;
+    width: auto;
+    height: 2px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+
+.AboutUs{
+    background: linear-gradient(rgb(190, 190, 190) 0%,  rgb(255,255,255) 100%);
+    align-items: center;
+    justify-content: center;
+}
+
+@media  screen and (max-width:960px) {
+    .AboutUs > p, .AboutUs > h1, .Gorazd-Rogelj > h1, .Gorazd-Rogelj > p{
+        margin-left: 30%;
+        margin-right: 5%;
+        padding-bottom: 5vh; 
+    }
+
+    .AboutUs > h1, .Gorazd-Rogelj > h1 {
+        margin-left: 28%;
+        font-size: 45px;
+    }
+}

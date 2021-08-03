@@ -1,0 +1,58 @@
+.contact-form{
+    display: grid;
+    height: 60vh;
+    background: linear-gradient(rgb(255,255,255) 0%, rgb(240, 240, 240) 100%);
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(1, auto);
+    height: fit-content;
+}
+.contact-form h1{
+    font-size: 50px;
+    padding-bottom: 20px;
+    padding-top: 10vh;
+}
+
+.contact-form p{
+    padding-bottom: 2vh;
+    font-size: 25px;
+    margin-bottom:  30px;
+    
+}
+
+
+input {
+    height:50px;
+    font-size:  22px;
+    margin-bottom:30px;
+    border-radius: 10px;
+    width: 500px;
+    resize: none;
+}
+
+textarea {
+    font-size: 22px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    height: 200px;
+    width: 500px;
+    resize: none;
+}
+
+
+
+.submit-btn {
+    font-size: 22px;
+    margin-top: 20px
+}
+
+@media  screen and (max-width:  960px) {
+    .contact-form{
+        padding-left: 25%;
+    }
+    input, textarea {
+        width: 75%;
+    }
+
+
+}
