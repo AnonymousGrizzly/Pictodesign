@@ -2,11 +2,8 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/en/Home';
-import Subhome from "./components/en/SubHome"
+import Subhome from "./a_Temporary_Trash/SubHome"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import MyContextProvider from "./contexts/MyContext";
-
-
 
 
 
