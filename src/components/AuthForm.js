@@ -16,17 +16,18 @@ const AuthForm = () => {
       event.preventDefault();
       const enteredemail = emailInputRef.current.value;
       const enteredpassword = passwordInputRef.current.value;
-
+      let url;
       if(isLogin){
-
+        url="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBzmagrwH6PYD8c-jhPEalgusQDLz-Vkqk"
       } else {
-        fetch("https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBzmagrwH6PYD8c-jhPEalgusQDLz-Vkqk", {
+        url="https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBzmagrwH6PYD8c-jhPEalgusQDLz-Vkqk"
+      }
+      fetch(url, {
           method: "POST", body: JSON.stringify({enteredemail, password: enteredpassword, returnSecureToken: true}),
-          headers: {"Content-Type": "application/json"}
-        }
-        ).then(res=>{
+          headers: {"Content-Type": "application/json"},
+      }).then(res=>{
           if(res.ok){
-
+            return res.json();
           }else{
             res.json().then(data=>{
               console.log(data);
@@ -34,11 +35,13 @@ const AuthForm = () => {
               if(data && data.error && data.error.message){
                 errorMessage = data.error.message;
               }
-              alert(errorMessage);
+              
+              throw new Error(errorMessage);
             });
           }
+        }).then(data => {}).catch(err =>{
+          alert(err.Message);
         });
-      }
     }; 
     return (
       <section className="auth">
@@ -53,7 +56,8 @@ const AuthForm = () => {
             <input type='password' id='password' required ref={passwordInputRef}/>
           </div>
           <div className="actions">
-            <button>{isLogin ? 'Login' : 'Create Account'}</button>
+            {!isLoading && <button>{isLogin ? 'Login' : 'Create Account'}</button>}
+            {isLoading && <p>Sending . . .</p>}
             <button type='button' className="toggle" onClick={switchAuthModeHandler} >
               {isLogin ? 'Create new account' : 'Login with existing account'}
             </button>
