@@ -6,7 +6,7 @@ const AuthForm = () => {
     
     const [isLogin, setIsLogin] = useState(true);
     const [isLoading, setisLoading] = useState(false);
-
+  
     const switchAuthModeHandler = () => {
       setIsLogin((prevState) => !prevState);
     };
