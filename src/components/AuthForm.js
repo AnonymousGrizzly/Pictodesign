@@ -1,5 +1,6 @@
 import {useState, useRef} from "react";
 import "../design/AuthForm.css";
+import AuthContext from "../contexts/auth-context"
 
 const AuthForm = () => {
     
@@ -9,7 +10,7 @@ const AuthForm = () => {
     const switchAuthModeHandler = () => {
       setIsLogin((prevState) => !prevState);
     };
-    
+    const authCtx = useContext(AuthContext);
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
     const submitHandler = (event) => {
@@ -30,7 +31,7 @@ const AuthForm = () => {
             return res.json();
           }else{
             res.json().then(data=>{
-              console.log(data);
+              authCtx.login(data.idToken);
               let errorMessage = "Authentication failed!";
               if(data && data.error && data.error.message){
                 errorMessage = data.error.message;
@@ -40,7 +41,7 @@ const AuthForm = () => {
             });
           }
         }).then(data => {}).catch(err =>{
-          alert(err.Message);
+          alert(errMessage);
         });
     }; 
     return (
