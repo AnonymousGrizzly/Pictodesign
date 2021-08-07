@@ -44,6 +44,9 @@ const AuthForm = () => {
           alert(errMessage);
         });
     }; 
+
+    // validation
+
     return (
       <section className="auth">
         <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>

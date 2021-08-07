@@ -17,7 +17,7 @@ export default function ContactForm() {
       });
       e.target.reset();
   }
-  
+  // validation
   return (
     <form className="contact-form" onSubmit={sendEmail}>
         <h1 id ="ContactUs">Contact us</h1>
