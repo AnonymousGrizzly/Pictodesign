@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {HashLink as Link} from 'react-router-hash-link';
 import {Button} from './Button';
+import AuthContext from "../contexts/auth-context"
 import '../design/Navbar.css';
 
 function Navbar() {
@@ -17,7 +18,8 @@ function Navbar() {
         showButton();
     }, []);
     
-    
+    const authCtx = useContext(AuthContext);
+    const isLoggedIn = authCtx.isLoggedIn;
    
     window.addEventListener('resize', showButton);
 
@@ -52,15 +54,25 @@ function Navbar() {
                                 About Us
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        {!isLoggedIn && (
+                            <li className='nav-item'>
                             <Link smooth to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 LOG IN
                             </Link>
                         </li>
+                        )}
+                        {isLoggedIn && (
+                            <li>
+                                <Link smooth to="/profile" className="nav-links-mobile" onClick={closeMobileMenu}>
+                                    PROFILE
+                                </Link>
+                            </li>
+                        )}
+                        
                     </ul>
-                    {button && <Button buttonStyle='btn--signup'>
+                    {!isLoggedIn && button && <Button buttonStyle='btn--signup'>
                         LOG IN
-                        </Button>}
+                    </Button>}
                 </div>
             </nav>
         </>

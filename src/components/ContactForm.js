@@ -6,7 +6,6 @@ import '../design/ContactForm.css';
 export default function ContactForm() {
   function sendEmail(e) {
     e.preventDefault();
-
     emailjs.sendForm('service_pwg85i6', 'template_p2xzziu', e.target, 'user_lUZAwz8eoO8W0tYfXrPYC')
       .then((result) => {
           console.log(result.text);
@@ -15,7 +14,7 @@ export default function ContactForm() {
           console.log(error.text);
           alert("An error occured!");
       });
-      e.target.reset();
+      e.target.reset(); 
   }
   // validation
   return (
