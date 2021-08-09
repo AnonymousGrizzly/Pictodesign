@@ -39,21 +39,26 @@ function Navbar() {
                                 Home
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        {!isLoggedIn && (
+                            <li className='nav-item'>
                             <Link smooth to='#Partners' className='nav-links' onClick={closeMobileMenu}>
                                 Partners
                             </Link>
                         </li>
-                        <li className='nav-item'>
+                        )}
+                        {!isLoggedIn && (
+                            <li className='nav-item'>
                             <Link smooth to='#ContactUs' className='nav-links' onClick={closeMobileMenu}>
                                 Contact Us
                             </Link>
                         </li>
+                        )}
+                        {!isLoggedIn && (
                         <li className='nav-item'>
                             <Link smooth to="#AboutUs" className='nav-links' onClick={closeMobileMenu}>
                                 About Us
                             </Link>
-                        </li>
+                        </li>)}
                         {!isLoggedIn && (
                             <li className='nav-item'>
                             <Link smooth to='/login' className='nav-links-mobile' onClick={closeMobileMenu}>
