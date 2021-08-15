@@ -70,4 +70,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 -->
 
-Note that this is not yet complete, stay tuned for more.
+Napisal sem si že svoj API s PHPjem ampak sem po parih dneh ugotovil, da se ne bom s tem ukvarjal in se tako prestavil na Firebase API. Pogledal sem tudi MongoDB API, ampak nisem našel dovolj dobre razlage kako se napiše React program za povezavo...
+
+V unused files branchu je še moj Word dokument za prakso. Mislim da ga moram še malo izboljšati, ker nečesa nisem razumel.
+
