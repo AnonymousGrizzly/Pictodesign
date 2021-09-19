@@ -1,5 +1,5 @@
 import ProfileForm from './ProfileForm'; 
-import classes from './UserProfile.module.css'; //import CSS
+import "../../design/UserProfile.css"; //import CSS
 
 const UserProfile = () => {
   return (
